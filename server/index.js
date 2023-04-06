@@ -20,8 +20,25 @@ app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({policy: "cross-origin"}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(cors());
+// app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+app.get("/users", (req, res) => {
+  // Here you can handle the GET request
+  // For example, you can fetch users data from a database and send it back as a response
+  const users = [
+    { id: 1, name: "John Doe" },
+    { id: 2, name: "Jane Doe" },
+  ];
+  res.send(users);
+});
 
+// app.listen(5002, () => {
+//   console.log("Server started on port 5002");
+// });
 app.use("/client", clientRoutes);
 app.use("/general", generalRoutes);
 app.use("/management", managementRoutes);
