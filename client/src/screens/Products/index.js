@@ -53,7 +53,7 @@ function Products() {
     const isNonMobile = useMediaQuery("(min-width: 1000px)");
 
 
-  console.log("@@@@@", data, isLoading);
+  // console.log("@@@@@", data, isLoading);
   return (
     <Box m="1.5rem 2.5rem">
       <Header title="PRODUCTS" subtitle="See your list of products." />
