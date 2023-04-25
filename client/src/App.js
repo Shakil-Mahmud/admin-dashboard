@@ -4,7 +4,7 @@ import { createTheme } from "@mui/material/styles";
 import { useSelector } from "react-redux";
 import { themeSettings } from "theme";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { Customers, Dashboard, Layout, Products, Transactions } from "./screens";
+import { Customers, Dashboard, Geography, Layout, Products, Transactions } from "./screens";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -22,6 +22,7 @@ function App() {
               <Route path="/customers" element={<Customers />} />
               <Route path="/customers" element={<Customers />} />
               <Route path="/transactions" element={<Transactions />} />
+              <Route path="/geography" element={<Geography />} />
             </Route>
           </Routes>
         </ThemeProvider>
